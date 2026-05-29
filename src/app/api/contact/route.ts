@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
+import { Resend } from "resend";
 import { checkRateLimit, getClientIP } from "@/lib/rate-limiter";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 // ── Security headers added to every response ──────────────────────────
 const SECURITY_HEADERS = {
@@ -121,32 +124,27 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // ── Option B: Resend (uncomment when ready) ────────────────────
-    // import { Resend } from "resend";
-    // const resend = new Resend(process.env.RESEND_API_KEY);
-    // await resend.emails.send({
-    //   from: "Portfolio <onboarding@resend.dev>",
-    //   to: "youss.boukhari@gmail.com",
-    //   subject: `Portfolio Contact from ${trimmedName}`,
-    //   text: `Name: ${trimmedName}\nEmail: ${trimmedEmail}\n\n${trimmedMessage}`,
-    // });
-    // return NextResponse.json({ ok: true }, { status: 200, headers: SECURITY_HEADERS });
-    // ──────────────────────────────────────────────────────────────
-
-    // Option A: Log server-side, client opens mailto as fallback
-    console.log("[Contact Form]", {
-      name: trimmedName,
-      email: trimmedEmail,
-      messageLength: trimmedMessage.length,
-      ip,
+    // ── Send email via Resend ─────────────────────────────────────
+    await resend.emails.send({
+      from: "Portfolio Contact <onboarding@resend.dev>",
+      to: "youss.boukhari@gmail.com",
+      replyTo: trimmedEmail,
+      subject: `New message from ${trimmedName} — yorii.media`,
+      text: `Name: ${trimmedName}\nEmail: ${trimmedEmail}\n\n${trimmedMessage}`,
+      html: `
+        <div style="font-family:sans-serif;max-width:560px;margin:0 auto;padding:2rem;background:#0a0a0a;color:#fff;border:1px solid #222;">
+          <h2 style="margin:0 0 0.5rem;font-size:1.2rem;color:#c8ff00;">New portfolio contact</h2>
+          <p style="margin:0 0 1.5rem;font-size:0.8rem;color:#888;">Sent from yorii.media</p>
+          <p style="margin:0 0 0.3rem;"><strong>Name:</strong> ${trimmedName}</p>
+          <p style="margin:0 0 1.5rem;"><strong>Email:</strong> <a href="mailto:${trimmedEmail}" style="color:#c8ff00;">${trimmedEmail}</a></p>
+          <div style="background:#111;border:1px solid #222;padding:1rem;white-space:pre-wrap;font-size:0.9rem;line-height:1.6;">${trimmedMessage}</div>
+        </div>
+      `,
     });
 
-    // Return 500 so client falls through to mailto fallback.
-    // Remove this when Option B (Resend) is wired up.
-    return NextResponse.json(
-      { ok: false, reason: "Email service not configured — falling back to mailto" },
-      { status: 500, headers: SECURITY_HEADERS }
-    );
+    console.log("[Contact Form] Email sent", { name: trimmedName, ip });
+
+    return NextResponse.json({ ok: true }, { status: 200, headers: SECURITY_HEADERS });
   } catch (err) {
     console.error("[Contact Form Error]", err);
     return NextResponse.json(
