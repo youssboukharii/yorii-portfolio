@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com; img-src 'self' data: * https://img.youtube.com; media-src 'self' data: *; frame-src 'self' https://www.youtube.com https://youtube.com; connect-src 'self' https://formsubmit.co;">
+
+  <title>Youssef Boukhari | Art Director, Video Editor & Filmmaker</title>
+  <meta name="description" content="Official creative portfolio of Youssef Boukhari (YoRii), an elite Art Director, Video Editor, and Filmmaker based in Casablanca, Morocco. Blending stunning cinematic visuals with high-end execution.">
+  <meta name="keywords" content="Youssef Boukhari, YoRii, Art Director, Video Editor, Filmmaker, Casablanca, Morocco, Video Production, Automotive Creative Producer, Wandaloo, 2M TV">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yorii.media/">
+  <meta property="og:title" content="Youssef Boukhari | Art Director, Video Editor & Filmmaker">
+  <meta property="og:description" content="Official portfolio of Youssef Boukhari (YoRii). Blending stunning visual aesthetics with high-end video editing and creative direction.">
+  <meta property="og:image" content="https://yorii.media/hero.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Youssef Boukhari | Art Director, Video Editor & Filmmaker">
+  <meta property="twitter:description" content="Official portfolio of Youssef Boukhari (YoRii). Blending stunning visual aesthetics with high-end video editing and creative direction.">
+  <meta property="twitter:image" content="https://yorii.media/hero.jpg">
+
+  <link rel="canonical" href="https://yorii.media/">
+  <link rel="icon" href="favicon.png" type="image/png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Youssef Boukhari",
+    "alternateName": "YoRii",
+    "jobTitle": "Art Director, Video Editor & Filmmaker",
+    "url": "https://yorii.media/",
+    "address": { "@type": "PostalAddress", "addressLocality": "Casablanca", "addressCountry": "Morocco" },
+    "sameAs": [
+      "https://www.linkedin.com/in/yorii/",
+      "https://www.instagram.com/the.yorii/",
+      "https://www.facebook.com/the.yorii"
+    ],
+    "worksFor": [
+      { "@type": "Organization", "name": "Wandaloo" },
+      { "@type": "Organization", "name": "Image Factory" },
+      { "@type": "Organization", "name": "2M TV" }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ═══════════════ TOKENS ═══════════════ */
+    :root {
+      --ink: #0c0b09;          /* warm near-black */
+      --ink-2: #14120f;        /* raised surface */
+      --bone: #ece7dd;         /* warm off-white */
+      --bone-dim: rgba(236, 231, 221, 0.55);
+      --bone-faint: rgba(236, 231, 221, 0.28);
+      --line: rgba(236, 231, 221, 0.12);
+      --accent: #e8491e;       /* film-leader orange */
+      --serif: 'Instrument Serif', serif;
+      --sans: 'Archivo', sans-serif;
+      --mono: 'IBM Plex Mono', monospace;
+      --gutter: clamp(1.25rem, 4vw, 4rem);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; background: var(--ink); }
+
+    body {
+      background: var(--ink);
+      color: var(--bone);
+      font-family: var(--sans);
+      font-weight: 300;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection { background: var(--accent); color: var(--ink); }
+
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--ink); }
+    ::-webkit-scrollbar-thumb { background: rgba(236,231,221,0.2); }
+    ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button { font-family: inherit; cursor: pointer; }
+
+    /* ═══════════════ FILM GRAIN ═══════════════ */
+    body::after {
+      content: '';
+      position: fixed; inset: -50%;
+      width: 200%; height: 200%;
+      pointer-events: none;
+      z-index: 9000;
+      opacity: 0.05;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)'/%3E%3C/svg%3E");
+      animation: grain 8s steps(10) infinite;
+    }
+    @keyframes grain {
+      0%, 100% { transform: translate(0,0); }
+      10% { transform: translate(-5%,-10%); }
+      20% { transform: translate(-15%,5%); }
+      30% { transform: translate(7%,-25%); }
+      40% { transform: translate(-5%,25%); }
+      50% { transform: translate(-15%,10%); }
+      60% { transform: translate(15%,0%); }
+      70% { transform: translate(0%,15%); }
+      80% { transform: translate(3%,35%); }
+      90% { transform: translate(-10%,10%); }
+    }
+
+    /* ═══════════════ MICRO-LABELS ═══════════════ */
+    .tc {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--bone-faint);
+    }
+    .tc b { color: var(--accent); font-weight: 500; }
+
+    /* ═══════════════ NAV ═══════════════ */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 1000;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.1rem var(--gutter);
+      mix-blend-mode: difference;
+    }
+    .nav-brand {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      letter-spacing: 0.02em;
+      color: #fff;
+    }
+    .nav-brand i { color: #fff; opacity: 0.5; font-style: italic; }
+    .nav-links { display: flex; gap: 2.2rem; }
+    .nav-links a {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #fff;
+      opacity: 0.65;
+      transition: opacity 0.3s;
+      position: relative;
+    }
+    .nav-links a:hover { opacity: 1; }
+    .nav-links a::after {
+      content: '';
+      position: absolute; left: 0; bottom: -5px;
+      width: 100%; height: 1px;
+      background: #fff;
+      transform: scaleX(0); transform-origin: right;
+      transition: transform 0.4s cubic-bezier(.16,1,.3,1);
+    }
+    .nav-links a:hover::after { transform: scaleX(1); transform-origin: left; }
+
+    /* ═══════════════ HERO ═══════════════ */
+    header {
+      position: relative;
+      min-height: 100svh;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      overflow: hidden;
+    }
+    .hero-media {
+      position: absolute; inset: 0;
+      z-index: 0;
+    }
+    .hero-media img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 12%;
+      filter: saturate(0.85) contrast(1.05);
+      animation: heroIn 2.4s cubic-bezier(.16,1,.3,1) both;
+    }
+    @keyframes heroIn {
+      from { transform: scale(1.12); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .hero-media::after {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(to top, var(--ink) 4%, rgba(12,11,9,0.55) 30%, rgba(12,11,9,0.15) 55%, rgba(12,11,9,0.35) 100%);
+    }
+
+    .hero-top-meta {
+      position: absolute;
+      top: 4.6rem; left: var(--gutter); right: var(--gutter);
+      display: flex; justify-content: space-between;
+      z-index: 2;
+      animation: fadeUp 1.2s 0.9s cubic-bezier(.16,1,.3,1) both;
+    }
+
+    .hero-body {
+      position: relative; z-index: 2;
+      padding: 0 var(--gutter) 0;
+    }
+    .hero-role {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 1.4rem;
+      animation: fadeUp 1.2s 0.55s cubic-bezier(.16,1,.3,1) both;
+    }
+    .hero-role .rule { width: 3.4rem; height: 1px; background: var(--accent); }
+    .hero-role span {
+      font-size: 0.7rem; font-weight: 500;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--bone-dim);
+    }
+    h1 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(3.4rem, 12.5vw, 11.5rem);
+      line-height: 0.88;
+      letter-spacing: -0.015em;
+      width: fit-content;
+      animation: fadeUp 1.4s 0.35s cubic-bezier(.16,1,.3,1) both;
+    }
+    h1 .ital { font-style: italic; color: var(--bone); }
+    .hero-lede {
+      margin-top: 1.7rem;
+      font-size: 0.82rem;
+      line-height: 1.85;
+      color: var(--bone-dim);
+      animation: fadeUp 1.2s 0.65s cubic-bezier(.16,1,.3,1) both;
+    }
+    .hero-lede em { font-family: var(--serif); font-style: italic; font-size: 1.06em; color: var(--bone); }
+
+    .hero-foot {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      gap: 2rem;
+      padding: 2.2rem var(--gutter) 1.6rem;
+      position: relative; z-index: 2;
+      animation: fadeUp 1.2s 0.8s cubic-bezier(.16,1,.3,1) both;
+    }
+    .hero-foot p {
+      max-width: 34ch;
+      font-size: 0.82rem;
+      line-height: 1.75;
+      color: var(--bone-dim);
+    }
+    .hero-scroll {
+      display: flex; align-items: center; gap: 0.7rem;
+      font-family: var(--mono); font-size: 0.62rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--bone-faint);
+      white-space: nowrap;
+    }
+    .hero-scroll .dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.25; } }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ═══════════════ CLIENT TICKER ═══════════════ */
+    .ticker {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      overflow: hidden;
+      padding: 1.05rem 0;
+      display: flex;
+      background: var(--ink);
+    }
+    .ticker-track {
+      display: flex; gap: 3.5rem;
+      flex-shrink: 0;
+      padding-right: 3.5rem;
+      animation: ticker 38s linear infinite;
+      align-items: center;
+    }
+    .ticker:hover .ticker-track { animation-play-state: paused; }
+    @keyframes ticker { to { transform: translateX(-100%); } }
+    .ticker-track span {
+      font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--bone-faint);
+      white-space: nowrap;
+      display: flex; align-items: center; gap: 3.5rem;
+    }
+    .ticker-track span::after { content: '◆'; font-size: 0.45rem; color: var(--accent); opacity: 0.7; }
+
+    /* ═══════════════ SECTION SCAFFOLD ═══════════════ */
+    section { padding: clamp(5rem, 10vw, 9rem) var(--gutter); position: relative; }
+    .sec-head {
+      display: flex; align-items: baseline; justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+      flex-wrap: wrap;
+    }
+    h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(2.6rem, 6vw, 5.2rem);
+      line-height: 1;
+      letter-spacing: -0.01em;
+    }
+    h2 em { font-style: italic; color: var(--accent); }
+    h2 sup {
+      font-family: var(--mono);
+      font-size: 0.24em;
+      letter-spacing: 0.15em;
+      color: var(--bone-faint);
+      vertical-align: super;
+      margin-left: 0.6rem;
+    }
+
+    /* reveal on scroll */
+    .rv { opacity: 0; transform: translateY(34px); transition: opacity 1s cubic-bezier(.16,1,.3,1), transform 1s cubic-bezier(.16,1,.3,1); }
+    .rv.in { opacity: 1; transform: none; }
+
+    /* ═══════════════ FILMS ═══════════════ */
+    .film-list { display: flex; flex-direction: column; }
+    .film {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+      gap: clamp(1.5rem, 4vw, 4rem);
+      align-items: center;
+      padding: clamp(2.2rem, 4.5vw, 4rem) 0;
+      border-top: 1px solid var(--line);
+      cursor: pointer;
+    }
+    .film:last-child { border-bottom: 1px solid var(--line); }
+    .film:nth-child(even) .film-thumb { order: 2; }
+
+    .film-thumb {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: var(--ink-2);
+    }
+    .film-thumb img {
+      width: 100%; height: 100%; object-fit: cover;
+      filter: saturate(0.8) contrast(1.02);
+      transform: scale(1.02);
+      transition: transform 1.1s cubic-bezier(.16,1,.3,1), filter 0.6s;
+    }
+    .film:hover .film-thumb img { transform: scale(1.08); filter: saturate(1.05) contrast(1.04); }
+    .film-thumb .badge {
+      position: absolute; left: 1rem; bottom: 1rem;
+      display: flex; align-items: center; gap: 0.55rem;
+      font-family: var(--mono); font-size: 0.6rem;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--bone);
+      background: rgba(12,11,9,0.72);
+      backdrop-filter: blur(8px);
+      padding: 0.5rem 0.85rem;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.45s, transform 0.45s;
+    }
+    .film:hover .badge { opacity: 1; transform: none; }
+    .badge svg { width: 9px; height: 9px; fill: var(--accent); }
+
+    .film-info { display: flex; flex-direction: column; gap: 1.05rem; align-items: flex-start; }
+    .film-info .tc { display: flex; gap: 1.4rem; }
+    .film-info h3 {
+      font-family: var(--serif); font-weight: 400;
+      font-size: clamp(1.7rem, 3.2vw, 2.7rem);
+      line-height: 1.04;
+      transition: color 0.4s;
+    }
+    .film:hover .film-info h3 em { color: var(--accent); }
+    .film-info h3 em { font-style: italic; transition: color 0.4s; }
+    .film-info p {
+      font-size: 0.8rem; line-height: 1.75;
+      color: var(--bone-dim);
+      max-width: 46ch;
+      display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .film-client {
+      font-family: var(--mono); font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      color: var(--bone-faint);
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 2px;
+      transition: color 0.3s, border-color 0.3s;
+    }
+    .film-client:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* ═══════════════ REELS ═══════════════ */
+    #reels { padding-right: 0; }
+    .reel-rail {
+      display: flex; gap: clamp(1rem, 2vw, 1.8rem);
+      overflow-x: auto;
+      padding-right: var(--gutter);
+      padding-bottom: 1.4rem;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+    }
+    .reel-rail::-webkit-scrollbar { display: none; }
+    .reel {
+      position: relative;
+      flex: 0 0 clamp(215px, 24vw, 300px);
+      aspect-ratio: 9 / 16;
+      overflow: hidden;
+      scroll-snap-align: start;
+      cursor: pointer;
+      background: var(--ink-2);
+    }
+    .reel img {
+      width: 100%; height: 100%; object-fit: cover;
+      filter: saturate(0.8);
+      transition: transform 1s cubic-bezier(.16,1,.3,1), filter 0.5s;
+    }
+    .reel:hover img { transform: scale(1.07); filter: saturate(1.05); }
+    .reel::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(12,11,9,0.85), transparent 45%);
+    }
+    .reel-meta {
+      position: absolute; left: 1.1rem; right: 1.1rem; bottom: 1.1rem;
+      z-index: 2;
+      display: flex; flex-direction: column; gap: 0.45rem;
+    }
+    .reel-meta .tc { color: rgba(236,231,221,0.5); }
+    .reel-meta h3 {
+      font-family: var(--serif); font-weight: 400; font-style: italic;
+      font-size: 1.18rem; line-height: 1.15;
+    }
+    .reel-play {
+      position: absolute; top: 1rem; right: 1rem; z-index: 2;
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid rgba(236,231,221,0.35);
+      display: flex; align-items: center; justify-content: center;
+      backdrop-filter: blur(6px);
+      transition: background 0.35s, border-color 0.35s, transform 0.35s;
+    }
+    .reel-play svg { width: 10px; height: 10px; fill: var(--bone); transition: fill 0.35s; }
+    .reel:hover .reel-play { background: var(--accent); border-color: var(--accent); transform: scale(1.1); }
+    .reel:hover .reel-play svg { fill: var(--ink); }
+
+    .rail-hint { margin-top: 0.6rem; display: flex; align-items: center; gap: 0.8rem; }
+    .rail-hint .line { flex: 0 0 44px; height: 1px; background: var(--bone-faint); }
+
+    /* ═══════════════ STILLS ═══════════════ */
+    .stills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(0.8rem, 1.6vw, 1.4rem);
+    }
+    .still {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      aspect-ratio: 4 / 5;
+      background: var(--ink-2);
+    }
+    .still:nth-child(3n+2) { transform: translateY(clamp(1.2rem, 3vw, 2.6rem)); }
+    .still img {
+      width: 100%; height: 100%; object-fit: cover;
+      filter: saturate(0.82);
+      transition: transform 1s cubic-bezier(.16,1,.3,1), filter 0.5s;
+    }
+    .still:hover img { transform: scale(1.06); filter: saturate(1.02); }
+    .still figcaption {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 2.4rem 1.1rem 1rem;
+      background: linear-gradient(to top, rgba(12,11,9,0.85), transparent);
+      font-family: var(--mono); font-size: 0.6rem;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--bone-dim);
+      opacity: 0; transform: translateY(6px);
+      transition: opacity 0.45s, transform 0.45s;
+    }
+    .still:hover figcaption { opacity: 1; transform: none; }
+
+    /* ═══════════════ ABOUT ═══════════════ */
+    #about {
+      border-top: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: clamp(2.5rem, 6vw, 6rem);
+      align-items: start;
+    }
+    .about-media {
+      position: sticky; top: 6rem;
+      overflow: hidden;
+    }
+    .about-media img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center 15%;
+      filter: saturate(0.85);
+    }
+    .about-media .tc { margin-top: 0.9rem; display: block; }
+
+    .about-body h2 { margin-bottom: 2rem; }
+    .about-lede {
+      font-family: var(--serif);
+      font-size: clamp(1.25rem, 2.1vw, 1.7rem);
+      line-height: 1.45;
+      color: var(--bone);
+      margin-bottom: 2.2rem;
+      max-width: 30ch;
+    }
+    .about-lede em { font-style: italic; color: var(--accent); }
+
+    .story { display: flex; flex-direction: column; gap: 1.3rem; max-width: 54ch; }
+    .story p {
+      font-size: 0.86rem;
+      line-height: 1.85;
+      color: var(--bone-dim);
+    }
+    .story p em { font-family: var(--serif); font-style: italic; font-size: 1.05em; color: var(--bone); }
+    .story p:first-child::first-letter {
+      font-family: var(--serif);
+      float: left;
+      font-size: 3.4em;
+      line-height: 0.82;
+      padding: 0.06em 0.14em 0 0;
+      color: var(--accent);
+    }
+    .story .story-close {
+      font-family: var(--mono); font-size: 0.62rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--bone-faint);
+      display: flex; align-items: center; gap: 0.8rem;
+    }
+    .story .story-close::before { content: ''; width: 2.6rem; height: 1px; background: var(--accent); }
+
+    .about-label {
+      font-family: var(--mono); font-size: 0.62rem;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--accent);
+      display: block;
+      margin: 2.6rem 0 1.3rem;
+      padding-top: 1.6rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .xp { display: flex; flex-direction: column; }
+    .xp-item {
+      display: grid;
+      grid-template-columns: 7.2rem 1fr;
+      gap: 1.4rem;
+      padding: 1.15rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .xp-item:last-child { border-bottom: none; }
+    .xp-when { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; color: var(--bone-faint); padding-top: 0.35rem; }
+    .xp-what h4 {
+      font-family: var(--serif); font-weight: 400;
+      font-size: 1.35rem;
+    }
+    .xp-what h4 a { border-bottom: 1px solid transparent; transition: color 0.3s, border-color 0.3s; }
+    .xp-what h4 a:hover { color: var(--accent); border-color: var(--accent); }
+    .xp-role {
+      font-size: 0.66rem; font-weight: 500;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--bone-dim);
+      margin: 0.3rem 0 0.5rem;
+    }
+    .xp-what p { font-size: 0.78rem; line-height: 1.7; color: var(--bone-dim); max-width: 52ch; }
+
+    .kit { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .kit span {
+      font-family: var(--mono); font-size: 0.6rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 0.45rem 0.8rem;
+      border: 1px solid var(--line);
+      color: var(--bone-dim);
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .kit span:hover { border-color: var(--accent); color: var(--bone); }
+    .kit span.ai { border-color: rgba(232,73,30,0.4); color: var(--accent); }
+
+    .logo-wall {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+    .logo-wall div {
+      display: flex; align-items: center; justify-content: center;
+      padding: 1.5rem 1rem;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .logo-wall img {
+      max-height: 26px; max-width: 80%;
+      object-fit: contain;
+      opacity: 0.4;
+      filter: grayscale(1);
+      transition: opacity 0.4s, filter 0.4s, transform 0.4s;
+    }
+    .logo-wall div:hover img { opacity: 0.95; filter: grayscale(0); transform: scale(1.05); }
+
+    /* ═══════════════ CONTACT ═══════════════ */
+    #contact {
+      border-top: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: clamp(2.5rem, 6vw, 6rem);
+    }
+    .contact-left h2 { font-size: clamp(3rem, 7vw, 6.4rem); margin-bottom: 2.2rem; }
+    .contact-left p.blurb { font-size: 0.85rem; line-height: 1.8; color: var(--bone-dim); max-width: 40ch; margin-bottom: 2.6rem; }
+    .contact-socials { display: flex; flex-direction: column; }
+    .contact-socials a {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 0;
+      border-top: 1px solid var(--line);
+      font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--bone-dim);
+      transition: color 0.3s, padding-left 0.4s cubic-bezier(.16,1,.3,1);
+    }
+    .contact-socials a:last-child { border-bottom: 1px solid var(--line); }
+    .contact-socials a span.arrow { font-family: var(--serif); font-style: italic; font-size: 1rem; transition: transform 0.4s cubic-bezier(.16,1,.3,1); }
+    .contact-socials a:hover { color: var(--bone); padding-left: 0.7rem; }
+    .contact-socials a:hover span.arrow { transform: translateX(6px); color: var(--accent); }
+
+    form { display: flex; flex-direction: column; }
+    .field { position: relative; margin-bottom: 0.4rem; }
+    form input, form textarea {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--line);
+      color: var(--bone);
+      font-family: var(--sans); font-weight: 300;
+      font-size: 0.95rem;
+      padding: 1.2rem 0 0.9rem;
+      outline: none;
+      transition: border-color 0.4s;
+      border-radius: 0;
+      resize: vertical;
+    }
+    form input::placeholder, form textarea::placeholder { color: var(--bone-faint); font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; }
+    form input:focus, form textarea:focus { border-color: var(--accent); }
+    #form-status {
+      font-family: var(--mono); font-size: 0.62rem;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 1rem; min-height: 1rem;
+    }
+    form button[type="submit"] {
+      margin-top: 1.6rem;
+      align-self: flex-start;
+      background: var(--bone);
+      color: var(--ink);
+      border: 1px solid var(--bone);
+      font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.26em; text-transform: uppercase;
+      padding: 1.05rem 2.4rem;
+      transition: background 0.35s, color 0.35s, border-color 0.35s;
+    }
+    form button[type="submit"]:hover { background: var(--accent); border-color: var(--accent); color: var(--ink); }
+    form button[type="submit"]:disabled { opacity: 0.45; cursor: wait; }
+
+    /* ═══════════════ FOOTER ═══════════════ */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 1.6rem var(--gutter);
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 1rem; flex-wrap: wrap;
+    }
+    footer .brand { font-family: var(--serif); font-size: 1rem; }
+
+    /* ═══════════════ LIGHTBOX ═══════════════ */
+    #lightbox {
+      position: fixed; inset: 0;
+      z-index: 5000;
+      background: rgba(12,11,9,0.94);
+      backdrop-filter: blur(14px);
+      display: flex; align-items: center; justify-content: center;
+      padding: clamp(1rem, 4vw, 3.5rem);
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.45s;
+    }
+    #lightbox.on { opacity: 1; pointer-events: auto; }
+    #lb-stage {
+      width: min(1100px, 100%);
+      aspect-ratio: 16 / 9;
+      background: #000;
+      transform: scale(0.96);
+      transition: transform 0.5s cubic-bezier(.16,1,.3,1);
+    }
+    #lightbox.on #lb-stage { transform: scale(1); }
+    #lightbox.vertical #lb-stage {
+      width: auto;
+      height: min(86vh, 780px);
+      aspect-ratio: 9 / 16;
+    }
+    #lb-stage iframe, #lb-stage img { width: 100%; height: 100%; border: none; object-fit: contain; }
+    #lb-close {
+      position: absolute; top: 1.4rem; right: var(--gutter);
+      background: none; border: none;
+      color: var(--bone);
+      font-family: var(--mono); font-size: 0.66rem;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      display: flex; align-items: center; gap: 0.6rem;
+      opacity: 0.7; transition: opacity 0.3s;
+    }
+    #lb-close:hover { opacity: 1; color: var(--accent); }
+
+    /* ═══════════════ MOTION SAFETY ═══════════════ */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.001s !important; transition-duration: 0.001s !important; }
+      html { scroll-behavior: auto; }
+      .rv { opacity: 1; transform: none; }
+    }
+
+    /* ═══════════════ RESPONSIVE ═══════════════ */
+    @media (max-width: 900px) {
+      .nav-links { gap: 1.3rem; }
+      .nav-links a { font-size: 0.6rem; letter-spacing: 0.16em; }
+      .film { grid-template-columns: 1fr; gap: 1.3rem; }
+      .film:nth-child(even) .film-thumb { order: 0; }
+      .film-info p { -webkit-line-clamp: 4; }
+      #about { grid-template-columns: 1fr; }
+      .about-media { position: static; max-width: 420px; }
+      #contact { grid-template-columns: 1fr; }
+      .stills-grid { grid-template-columns: repeat(2, 1fr); }
+      .still:nth-child(3n+2) { transform: none; }
+      .still:nth-child(2n) { transform: translateY(1.4rem); }
+      .logo-wall { grid-template-columns: repeat(3, 1fr); }
+      .hero-foot { flex-direction: column; align-items: flex-start; }
+    }
+    @media (hover: none) {
+      .film-thumb .badge { opacity: 1; transform: none; }
+      .still figcaption { opacity: 1; transform: none; }
+    }
+    @media (max-width: 560px) {
+      .nav-links a:not(.keep) { display: none; }
+      .sec-head .tc { display: none; }
+      h1 { font-size: clamp(3rem, 16.5vw, 5rem); }
+      .hero-top-meta { display: none; }
+      .logo-wall { grid-template-columns: repeat(2, 1fr); }
+      .xp-item { grid-template-columns: 1fr; gap: 0.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════ NAV ═══════════ -->
+  <nav>
+    <a class="nav-brand" href="#top">YoRii<i>.</i></a>
+    <div class="nav-links">
+      <a href="#films">Films</a>
+      <a href="#reels">Reels</a>
+      <a href="#stills">Stills</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="keep">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <header id="top">
+    <div class="hero-media">
+      <img src="hero.jpg" alt="Portrait of Youssef Boukhari" fetchpriority="high">
+    </div>
+
+    <div class="hero-top-meta">
+      <span class="tc">Casablanca, Morocco — <b>33.57°N, 7.58°W</b></span>
+      <span class="tc">Available for global projects</span>
+    </div>
+
+    <div class="hero-body">
+      <div class="hero-role">
+        <span class="rule"></span>
+        <span>Art Director · Video Editor · Filmmaker</span>
+      </div>
+      <h1 id="hero-name">Youssef<br><span class="ital">Boukhari</span></h1>
+      <p class="hero-lede" id="hero-lede">I don't just film cars, campaigns or ceremonies — I film <em>the feeling they leave behind.</em> Every project is a hunt for the one frame nobody else saw: light bending over a fender at dusk, the breath before the applause, the cut that lands like a heartbeat. That's the work. <em>That's the craft.</em></p>
+    </div>
+
+    <div class="hero-foot">
+      <span class="tc">8+ years — 1,800+ films — 50+ brands</span>
+      <a href="#films" class="hero-scroll"><span class="dot"></span> Scroll — Selected Works</a>
+    </div>
+  </header>
+
+  <!-- ═══════════ CLIENT TICKER ═══════════ -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Audi</span><span>BMW</span><span>Maserati</span><span>Land Rover</span><span>Alfa Romeo</span><span>DS Automobiles</span><span>Cupra</span><span>BYD</span><span>Renault</span><span>Kartell</span><span>Sanlam</span><span>Averda</span><span>2M TV</span><span>Wandaloo</span><span>Image Factory</span><span>FRMJE</span>
+    </div>
+    <div class="ticker-track">
+      <span>Audi</span><span>BMW</span><span>Maserati</span><span>Land Rover</span><span>Alfa Romeo</span><span>DS Automobiles</span><span>Cupra</span><span>BYD</span><span>Renault</span><span>Kartell</span><span>Sanlam</span><span>Averda</span><span>2M TV</span><span>Wandaloo</span><span>Image Factory</span><span>FRMJE</span>
+    </div>
+  </div>
+
+  <!-- ═══════════ FILMS ═══════════ -->
+  <section id="films">
+    <div class="sec-head rv">
+      <h2>Selected <em>Films</em><sup>(06)</sup></h2>
+      <span class="tc">SEC 01 / Commercial direction — <b>TC 00:01:00:00</b></span>
+    </div>
+    <div class="film-list" id="film-list"></div>
+  </section>
+
+  <!-- ═══════════ REELS ═══════════ -->
+  <section id="reels">
+    <div class="sec-head rv" style="padding-right: var(--gutter);">
+      <h2>Vertical <em>Reels</em><sup>(09)</sup></h2>
+      <span class="tc">SEC 02 / Short-form — <b>TC 00:02:00:00</b></span>
+    </div>
+    <div class="reel-rail rv" id="reel-rail"></div>
+    <div class="rail-hint rv"><span class="line"></span><span class="tc">Drag / scroll sideways</span></div>
+  </section>
+
+  <!-- ═══════════ STILLS ═══════════ -->
+  <section id="stills">
+    <div class="sec-head rv">
+      <h2>Curated <em>Stills</em><sup>(06)</sup></h2>
+      <span class="tc">SEC 03 / Photography — <b>TC 00:03:00:00</b></span>
+    </div>
+    <div class="stills-grid" id="stills-grid"></div>
+  </section>
+
+  <!-- ═══════════ ABOUT ═══════════ -->
+  <section id="about">
+    <div class="about-media rv">
+      <img src="story.jpg" alt="Youssef Boukhari, director portrait" loading="lazy">
+      <span class="tc">Fig. 01 — The director, Casablanca</span>
+    </div>
+
+    <div class="about-body">
+      <div class="rv">
+        <h2>The <em>Story</em></h2>
+        <p class="about-lede">Every frame is a promise to the <em>person watching.</em></p>
+        <div class="story">
+          <p>It started in a newsroom. 2016, 2M TV — a kid in Casablanca cutting national broadcast tape on Avid, learning under deadline pressure that <em>an edit is never just an edit</em> — it's the difference between someone feeling something and someone reaching for the remote.</p>
+          <p>Then came the road. Eight years at Wandaloo, <em>1,800 films</em> and 50+ automotive brands — chasing golden hour across Morocco with a gimbal in one hand and a shot list in the other, owning every step from location scouting to the final grade.</p>
+          <p>Today I direct, shoot and edit for brands that demand cinema. The tools changed, the obsession didn't: <em>find the frame nobody else saw.</em></p>
+          <span class="story-close">Casablanca — and anywhere the light is good</span>
+        </div>
+      </div>
+
+      <div class="rv">
+        <span class="about-label">Professional Experience</span>
+        <div class="xp">
+          <div class="xp-item">
+            <span class="xp-when">2018 — Present</span>
+            <div class="xp-what">
+              <h4><a href="https://www.wandaloo.com/" target="_blank" rel="noopener noreferrer">Wandaloo</a></h4>
+              <span class="xp-role">Automotive Creative Producer · Photo & Video</span>
+              <p>Lead Videographer & Editor — 8+ years, 1,800+ videos. Owned the complete pipeline for test drives covering 50+ automotive brands: location scouting, driving shots, photography, color grading and final edit.</p>
+            </div>
+          </div>
+          <div class="xp-item">
+            <span class="xp-when">2017 · 3 months</span>
+            <div class="xp-what">
+              <h4><a href="https://www.imagefactory-maroc.com/index.html" target="_blank" rel="noopener noreferrer">Image Factory</a></h4>
+              <span class="xp-role">Video Production Intern · Editor & Cameraman</span>
+              <p>Worked across the full pipeline at one of Morocco's established production companies: pre-production prep, on-set camera operation, and post-production finishing for commercial content.</p>
+            </div>
+          </div>
+          <div class="xp-item">
+            <span class="xp-when">2016 · 6 months</span>
+            <div class="xp-what">
+              <h4><a href="https://www.2m.ma/" target="_blank" rel="noopener noreferrer">2M TV</a></h4>
+              <span class="xp-role">Video Editor</span>
+              <p>Edited broadcast content to professional TV delivery standards for Morocco's national public television, operating within a fast-paced newsroom workflow on Avid Media Composer.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rv">
+        <span class="about-label">Software Toolkit</span>
+        <div class="kit">
+          <span>Premiere Pro</span><span>After Effects</span><span>Avid</span><span>DaVinci</span><span>Final Cut Pro</span><span>Photoshop</span><span>Lightroom</span><span>Creative Cloud</span>
+          <span class="ai">Claude</span><span class="ai">Antigravity</span><span class="ai">Google AI</span><span class="ai">Topaz</span><span class="ai">Higgsfield</span>
+        </div>
+      </div>
+
+      <div class="rv">
+        <span class="about-label">Trusted By</span>
+        <div class="logo-wall">
+          <div><img src="logos/AUDI.png" alt="Audi" loading="lazy"></div>
+          <div><img src="logos/BMW.png" alt="BMW" loading="lazy"></div>
+          <div><img src="logos/MASERATI.png" alt="Maserati" loading="lazy"></div>
+          <div><img src="logos/LAND ROVER.png" alt="Land Rover" loading="lazy"></div>
+          <div><img src="logos/ALFA ROMEO.png" alt="Alfa Romeo" loading="lazy"></div>
+          <div><img src="logos/DS AUTOMOBILE.png" alt="DS Automobiles" loading="lazy"></div>
+          <div><img src="logos/CUPRA.png" alt="Cupra" loading="lazy"></div>
+          <div><img src="logos/BYD.png" alt="BYD" loading="lazy"></div>
+          <div><img src="logos/RENAULT.png" alt="Renault" loading="lazy"></div>
+          <div><img src="logos/KARTELL.png" alt="Kartell" loading="lazy"></div>
+          <div><img src="logos/SANLAM.png" alt="Sanlam" loading="lazy"></div>
+          <div><img src="logos/AVERDA.png" alt="Averda" loading="lazy"></div>
+          <div><img src="logos/2M.png" alt="2M TV" loading="lazy"></div>
+          <div><img src="logos/WANDALOO.png" alt="Wandaloo" loading="lazy"></div>
+          <div><img src="logos/IMAGE FACTORY.png" alt="Image Factory" loading="lazy"></div>
+          <div><img src="logos/FRMJE.png" alt="FRMJE" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CONTACT ═══════════ -->
+  <section id="contact">
+    <div class="contact-left rv">
+      <h2>Let's make<br>something <em>cinematic</em></h2>
+      <p class="blurb">Available for commercials, brand films, automotive content and creative direction — worldwide.</p>
+      <div class="contact-socials">
+        <a href="https://www.linkedin.com/in/yorii/" target="_blank" rel="noopener noreferrer">LinkedIn <span class="arrow">→</span></a>
+        <a href="https://www.instagram.com/the.yorii/" target="_blank" rel="noopener noreferrer">Instagram <span class="arrow">→</span></a>
+        <a href="https://www.facebook.com/the.yorii" target="_blank" rel="noopener noreferrer">Facebook <span class="arrow">→</span></a>
+        <a href="#" id="email-link">Email <span class="arrow">→</span></a>
+      </div>
+    </div>
+
+    <form id="contact-form" class="rv" novalidate>
+      <div style="position:absolute; overflow:hidden; width:0; height:0; opacity:0; pointer-events:none;" aria-hidden="true">
+        <input type="text" name="website" tabindex="-1" autocomplete="off">
+        <input type="text" name="realname" tabindex="-1" autocomplete="off">
+        <input type="email" name="contactemail" tabindex="-1" autocomplete="off">
+      </div>
+      <div class="field"><input type="text" name="name" placeholder="Full name" required minlength="2"></div>
+      <div class="field"><input type="email" name="email" placeholder="Professional email" required></div>
+      <div class="field"><textarea name="message" placeholder="Project details" rows="5" required minlength="10"></textarea></div>
+      <div id="form-status" role="status"></div>
+      <button type="submit" id="submit-btn">Send message</button>
+    </form>
+  </section>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer>
+    <span class="brand">YoRii<i style="opacity:0.4">.</i></span>
+    <span class="tc">© <span id="year"></span> Youssef Boukhari — Casablanca, Morocco</span>
+    <span class="tc">Cut on <b>reel</b> time</span>
+  </footer>
+
+  <!-- ═══════════ LIGHTBOX ═══════════ -->
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Media viewer">
+    <button id="lb-close" aria-label="Close viewer">Close — ESC ✕</button>
+    <div id="lb-stage"></div>
+  </div>
+
+  <script>
+    /* ═══════════ DATA ═══════════ */
+    const FILMS = [
+      { title: 'Averda — <em>People Behind the Mission</em>', vid: 'iKu5L70Nlsw', client: 'averda.com', clientUrl: 'https://www.averda.com',
+        desc: 'Averda keeps cities clean across Africa and the Middle East — an operation that never sleeps. This event film turns the spotlight on the people behind it: a night of pride, applause and belonging for the Morocco teams.' },
+      { title: 'Sanlam — <em>One Team, One Night</em>', vid: 'nGNu7ULfRlQ', client: 'sanlam.ma', clientUrl: 'https://sanlam.ma',
+        desc: 'A century of insurance heritage, Africa\'s largest non-banking financial group — and one unforgettable evening. Caftans, laughter and tradition: a corporate celebration filmed like a family story, because that\'s what it was.' },
+      { title: 'E-Botola — <em>The Grand Final</em>', vid: '6Z3qQapJo6Y', client: 'frmje.ma', clientUrl: 'https://frmje.ma/',
+        desc: 'The grand final of Morocco\'s official esports football league, organized by the Royal Moroccan Federation of Electronic Games. Confetti, trophy gold and champion adrenaline — the night the kingdom\'s best players wrote history on the big stage.' },
+      { title: 'Smart Fit — <em>Sela Park Launch</em>', vid: 'f3MZ8MX4JgA', client: 'imhenderson.com', clientUrl: 'https://imhenderson.com/',
+        desc: 'Smart Fit — the largest fitness chain in Latin America, millions of members strong — arrives in Casablanca. A high-energy launch film for the Sela Park club: neon signage, iron and first-day adrenaline, cut to make the whole city want in.' },
+      { title: 'DS Automobiles — <em>Marché des Créateurs</em>', vid: 'A9nhvSBvDxk', client: 'dsautomobiles.ma', clientUrl: 'https://www.dsautomobiles.ma/',
+        desc: 'French avant-garde luxury meets Moroccan craft. Inside the DS Store for the festive season, "Le Marché des Créateurs" gathered designers and artisans in one intimate showcase — an event film with Parisian polish and warm holiday light.' },
+      { title: 'Alpine — <em>A110 in Morocco</em>', vid: 'MctlENJRWy0', client: 'alpinecars.ma', clientUrl: 'https://www.alpinecars.ma/',
+        desc: 'Born in Dieppe in 1955, Alpine builds France\'s purest driver\'s car. For its Moroccan showcase, the A110 in signature Alpine Blue meets hot tarmac — clean lines, track cones and the unmistakable soundtrack of a mid-engine berlinette.' }
+    ];
+
+    const REELS = [
+      { title: 'AI Dream House', sub: 'Generative architecture', vid: 'lpNly-OW_ho' },
+      { title: 'Théâtre du Liban', sub: 'Dramatic shorts', vid: 'ffPi1K8eQj0' },
+      { title: 'Kartell', sub: 'Product aesthetics', vid: '4-nvbzWzjcs' },
+      { title: 'Brothers Pharma', sub: 'Medical focus', vid: 'CTWg0IzRVKc' },
+      { title: 'Luxury Wedding', sub: 'Lifestyle editorial', vid: 'Ig1WE-TGXXU' },
+      { title: 'Protocole Alpha I', sub: 'Culinary reel', vid: 'TY9GEJAWWIY' },
+      { title: 'Protocole Alpha II', sub: 'Culinary reel', vid: 'uRq7O6nUeWA' },
+      { title: 'Maserati', sub: 'Gran Turismo shorts', vid: 'T4wxFtHqUXs' },
+      { title: 'Cupra Formentor', sub: 'City focus', vid: 'IJpeGhD6bsE' }
+    ];
+
+    const STILLS = [
+      { title: 'Culinary Gastronomy', img: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop' },
+      { title: 'Luxury Living Architecture', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop' },
+      { title: 'Avant-Garde Hypercar', img: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=800&auto=format&fit=crop' },
+      { title: 'Nocturnal Racing Lines', img: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800&auto=format&fit=crop' },
+      { title: 'Editorial Mercedes Lights', img: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=800&auto=format&fit=crop' },
+      { title: 'Cinematic Mountain Pass', img: 'https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?q=80&w=800&auto=format&fit=crop' }
+    ];
+
+    const EMAIL = 'youss.boukharii@gmail.com';
+
+    /* ═══════════ BUILD ═══════════ */
+    const pad = n => String(n).padStart(2, '0');
+
+    document.getElementById('film-list').innerHTML = FILMS.map((f, i) => `
+      <article class="film rv" data-vid="${f.vid}" tabindex="0" role="button" aria-label="Play film: ${f.title.replace(/<[^>]+>/g, '')}">
+        <div class="film-thumb">
+          <img src="https://img.youtube.com/vi/${f.vid}/maxresdefault.jpg" alt="" loading="${i < 2 ? 'eager' : 'lazy'}">
+          <span class="badge"><svg viewBox="0 0 10 10"><path d="M1 0l8 5-8 5z"/></svg> Play film</span>
+        </div>
+        <div class="film-info">
+          <span class="tc">Film ${pad(i + 1)} — <b>16:9</b></span>
+          <h3>${f.title}</h3>
+          <p>${f.desc}</p>
+          <a class="film-client" href="${f.clientUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">↗ ${f.client}</a>
+        </div>
+      </article>`).join('');
+
+    document.getElementById('reel-rail').innerHTML = REELS.map((r, i) => `
+      <div class="reel" data-vid="${r.vid}" data-vertical="1" tabindex="0" role="button" aria-label="Play reel: ${r.title}">
+        <img src="https://img.youtube.com/vi/${r.vid}/hqdefault.jpg" alt="" loading="lazy">
+        <span class="reel-play"><svg viewBox="0 0 10 10"><path d="M1 0l8 5-8 5z"/></svg></span>
+        <div class="reel-meta">
+          <span class="tc">Reel ${pad(i + 1)} — ${r.sub}</span>
+          <h3>${r.title}</h3>
+        </div>
+      </div>`).join('');
+
+    document.getElementById('stills-grid').innerHTML = STILLS.map((s, i) => `
+      <figure class="still rv" data-img="${s.img}" tabindex="0" role="button" aria-label="View still: ${s.title}">
+        <img src="${s.img}" alt="${s.title}" loading="lazy">
+        <figcaption>${pad(i + 1)} — ${s.title}</figcaption>
+      </figure>`).join('');
+
+    /* ═══════════ REVEAL ON SCROLL ═══════════ */
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+    /* ═══════════ LIGHTBOX ═══════════ */
+    const lightbox = document.getElementById('lightbox');
+    const stage = document.getElementById('lb-stage');
+    let lastFocus = null;
+
+    function openLB(html, vertical) {
+      lastFocus = document.activeElement;
+      stage.innerHTML = html;
+      lightbox.classList.toggle('vertical', !!vertical);
+      lightbox.classList.add('on');
+      document.body.style.overflow = 'hidden';
+      document.getElementById('lb-close').focus();
+    }
+    function closeLB() {
+      lightbox.classList.remove('on');
+      document.body.style.overflow = '';
+      setTimeout(() => { stage.innerHTML = ''; }, 400);
+      if (lastFocus) lastFocus.focus();
+    }
+    const ytEmbed = id => `<iframe src="https://www.youtube.com/embed/${encodeURIComponent(id)}?autoplay=1&rel=0&modestbranding=1" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title="Video player"></iframe>`;
+
+    document.addEventListener('click', e => {
+      const media = e.target.closest('[data-vid], [data-img]');
+      if (media) {
+        if (media.dataset.vid) openLB(ytEmbed(media.dataset.vid), media.dataset.vertical);
+        else openLB(`<img src="${media.dataset.img}" alt="">`);
+      }
+    });
+    document.addEventListener('keydown', e => {
+      const media = e.target.closest?.('[data-vid], [data-img]');
+      if ((e.key === 'Enter' || e.key === ' ') && media) {
+        e.preventDefault();
+        media.click();
+      }
+      if (e.key === 'Escape' && lightbox.classList.contains('on')) closeLB();
+    });
+    document.getElementById('lb-close').addEventListener('click', closeLB);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLB(); });
+
+    /* ═══════════ CONTACT FORM (FormSubmit AJAX) ═══════════ */
+    const form = document.getElementById('contact-form');
+    const statusEl = document.getElementById('form-status');
+    const submitBtn = document.getElementById('submit-btn');
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+      if (form.website.value || form.realname.value || form.contactemail.value) return; // honeypot
+
+      submitBtn.disabled = true;
+      statusEl.textContent = 'Transmitting…';
+      try {
+        const res = await fetch(`https://formsubmit.co/ajax/${EMAIL}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            name: form.name.value.trim(),
+            email: form.email.value.trim(),
+            message: form.message.value.trim(),
+            _subject: 'New portfolio inquiry — yorii.media'
+          })
+        });
+        if (!res.ok) throw new Error('send failed');
+        statusEl.textContent = 'Message received — I\'ll reply within 24h.';
+        form.reset();
+      } catch {
+        statusEl.textContent = 'Network issue — opening your mail app instead…';
+        const subject = encodeURIComponent('Portfolio inquiry');
+        const body = encodeURIComponent(`${form.name.value}\n\n${form.message.value}`);
+        window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
+      } finally {
+        submitBtn.disabled = false;
+      }
+    });
+
+    /* ═══════════ HERO LEDE — MATCH NAME WIDTH ═══════════ */
+    function fitHeroLede() {
+      const name = document.getElementById('hero-name');
+      const lede = document.getElementById('hero-lede');
+      if (!name || !lede) return;
+      lede.style.maxWidth = Math.ceil(name.getBoundingClientRect().width) + 'px';
+    }
+    fitHeroLede();
+    if (document.fonts?.ready) document.fonts.ready.then(fitHeroLede);
+    let fitTmr;
+    window.addEventListener('resize', () => { clearTimeout(fitTmr); fitTmr = setTimeout(fitHeroLede, 120); });
+
+    /* ═══════════ MISC ═══════════ */
+    document.getElementById('email-link').addEventListener('click', e => {
+      e.preventDefault();
+      window.location.href = `mailto:${EMAIL}`;
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
