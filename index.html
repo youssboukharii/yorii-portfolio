@@ -47,6 +47,8 @@
   }
   </script>
 
+  <link rel="preload" as="image" href="hero.jpg" fetchpriority="high">
+  <link rel="preconnect" href="https://img.youtube.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -178,7 +180,7 @@
       object-fit: cover;
       object-position: center 12%;
       filter: saturate(0.85) contrast(1.05);
-      animation: heroIn 2.4s cubic-bezier(.16,1,.3,1) both;
+      animation: heroIn 1.2s cubic-bezier(.16,1,.3,1) both;
     }
     @keyframes heroIn {
       from { transform: scale(1.12); opacity: 0; }
