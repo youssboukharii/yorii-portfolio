@@ -745,6 +745,256 @@
       .logo-wall { grid-template-columns: repeat(2, 1fr); }
       .xp-item { grid-template-columns: 1fr; gap: 0.3rem; }
     }
+
+    /* ═══════════════ STUDIO CMS & ADMIN CONSOLE ═══════════════ */
+    #admin-login-modal, #admin-console-modal {
+      position: fixed; inset: 0;
+      z-index: 10000;
+      background: rgba(12, 11, 9, 0.9);
+      backdrop-filter: blur(22px) saturate(180%);
+      display: flex; align-items: center; justify-content: center;
+      padding: clamp(1rem, 3vw, 2.5rem);
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.35s cubic-bezier(.16,1,.3,1);
+    }
+    #admin-login-modal.open, #admin-console-modal.open {
+      opacity: 1; pointer-events: auto;
+    }
+    .admin-card {
+      background: var(--ink-2);
+      border: 1px solid var(--line);
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.85);
+      position: relative;
+    }
+    .login-box {
+      width: min(440px, 100%);
+      padding: 2.8rem 2.4rem;
+      display: flex; flex-direction: column; gap: 1.2rem;
+      transform: translateY(20px) scale(0.97);
+      transition: transform 0.4s cubic-bezier(.16,1,.3,1);
+    }
+    #admin-login-modal.open .login-box {
+      transform: translateY(0) scale(1);
+    }
+    .login-header h3 {
+      font-family: var(--serif);
+      font-size: 2.1rem;
+      font-weight: 400;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .login-header h3 em { font-style: italic; color: var(--accent); }
+    .admin-input {
+      width: 100%;
+      background: rgba(12, 11, 9, 0.6);
+      border: 1px solid var(--line);
+      color: var(--bone);
+      font-family: var(--sans);
+      font-size: 0.88rem;
+      padding: 0.85rem 1rem;
+      outline: none;
+      transition: border-color 0.3s, background 0.3s;
+      border-radius: 0;
+    }
+    .admin-input:focus {
+      border-color: var(--accent);
+      background: rgba(12, 11, 9, 0.95);
+    }
+    .admin-btn {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 0.85rem 1.6rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
+      transition: all 0.3s cubic-bezier(.16,1,.3,1);
+    }
+    .admin-btn-primary {
+      background: var(--accent);
+      color: var(--ink);
+      border-color: var(--accent);
+    }
+    .admin-btn-primary:hover {
+      background: #ff5722;
+      border-color: #ff5722;
+      transform: translateY(-1px);
+    }
+    .admin-btn-secondary {
+      background: transparent;
+      color: var(--bone-dim);
+      border-color: var(--line);
+    }
+    .admin-btn-secondary:hover {
+      color: var(--bone);
+      border-color: var(--bone-dim);
+    }
+    .admin-btn-danger {
+      background: transparent;
+      color: #ff5555;
+      border-color: rgba(255, 85, 85, 0.25);
+    }
+    .admin-btn-danger:hover {
+      background: rgba(255, 85, 85, 0.15);
+      border-color: #ff5555;
+    }
+    .admin-btn-sm {
+      padding: 0.45rem 0.8rem;
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+    }
+    .login-error {
+      color: #ff5555;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      min-height: 1.2rem;
+      display: none;
+    }
+
+    /* CMS Main Console */
+    .console-shell {
+      width: min(1200px, 100%);
+      height: min(88vh, 850px);
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      overflow: hidden;
+      transform: translateY(20px) scale(0.98);
+      transition: transform 0.45s cubic-bezier(.16,1,.3,1);
+    }
+    #admin-console-modal.open .console-shell {
+      transform: translateY(0) scale(1);
+    }
+    .console-sidebar {
+      border-right: 1px solid var(--line);
+      background: rgba(12, 11, 9, 0.85);
+      display: flex; flex-direction: column;
+      padding: 1.8rem 1.2rem;
+    }
+    .console-logo {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .console-logo span.tag {
+      font-family: var(--mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      border: 1px solid rgba(232, 73, 30, 0.35);
+      padding: 0.2rem 0.4rem;
+    }
+    .console-nav {
+      display: flex; flex-direction: column; gap: 0.4rem;
+      flex: 1;
+    }
+    .console-tab-btn {
+      background: none; border: none; text-align: left;
+      color: var(--bone-dim);
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 0.8rem 1rem;
+      border-left: 2px solid transparent;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: all 0.25s;
+    }
+    .console-tab-btn:hover {
+      color: var(--bone);
+      background: rgba(236, 231, 221, 0.03);
+    }
+    .console-tab-btn.active {
+      color: var(--accent);
+      border-left-color: var(--accent);
+      background: rgba(232, 73, 30, 0.08);
+      font-weight: 500;
+    }
+    .console-sidebar-foot {
+      display: flex; flex-direction: column; gap: 0.6rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .console-main {
+      display: flex; flex-direction: column;
+      height: 100%;
+      background: var(--ink-2);
+      overflow: hidden;
+    }
+    .console-topbar {
+      padding: 1.4rem 2rem;
+      border-bottom: 1px solid var(--line);
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(12, 11, 9, 0.4);
+    }
+    .console-topbar h2 {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      font-weight: 400;
+      line-height: 1;
+    }
+    .console-topbar h2 em { font-style: italic; color: var(--accent); }
+    .console-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 2rem;
+      display: flex; flex-direction: column; gap: 1.6rem;
+    }
+    .console-pane { display: none; flex-direction: column; gap: 1.6rem; }
+    .console-pane.active { display: flex; }
+
+    /* Item Card */
+    .cms-item-card {
+      border: 1px solid var(--line);
+      background: rgba(12, 11, 9, 0.5);
+      padding: 1.2rem;
+      display: grid;
+      grid-template-columns: 140px 1fr auto;
+      gap: 1.2rem;
+      align-items: center;
+      transition: border-color 0.25s;
+    }
+    .cms-item-card:hover {
+      border-color: rgba(236, 231, 221, 0.25);
+    }
+    .cms-item-thumb {
+      aspect-ratio: 16/9;
+      background: #000;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+    .cms-item-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .cms-item-thumb.vertical { aspect-ratio: 9/16; }
+    .cms-item-fields { display: flex; flex-direction: column; gap: 0.6rem; }
+    .cms-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.8rem; }
+    .cms-field label {
+      display: block;
+      font-family: var(--mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--bone-faint);
+      margin-bottom: 0.3rem;
+    }
+    .cms-item-actions {
+      display: flex; flex-direction: column; gap: 0.4rem;
+      align-items: flex-end;
+    }
+    @media (max-width: 860px) {
+      .console-shell { grid-template-columns: 1fr; height: 96vh; }
+      .console-sidebar { border-right: none; border-bottom: 1px solid var(--line); padding: 1rem; }
+      .console-nav { flex-direction: row; overflow-x: auto; }
+      .console-tab-btn { padding: 0.5rem 0.8rem; border-left: none; border-bottom: 2px solid transparent; }
+      .console-tab-btn.active { border-bottom-color: var(--accent); }
+      .cms-item-card { grid-template-columns: 1fr; }
+      .cms-item-actions { flex-direction: row; justify-content: flex-end; }
+    }
   </style>
 </head>
 <body>
@@ -935,9 +1185,9 @@
 
   <!-- ═══════════ FOOTER ═══════════ -->
   <footer>
-    <span class="brand">YoRii<i style="opacity:0.4">.</i></span>
+    <span class="brand">YoRii<i style="opacity:0.4; cursor: pointer;" onclick="openAdminPortal()" title="Studio Console">.</i></span>
     <span class="tc">© <span id="year"></span> Youssef Boukhari — Casablanca, Morocco</span>
-    <span class="tc">Cut on <b>reel</b> time</span>
+    <span class="tc" style="cursor: pointer;" onclick="openAdminPortal()" title="Studio Console (Ctrl+Shift+A)">Cut on <b>reel</b> time</span>
   </footer>
 
   <!-- ═══════════ LIGHTBOX ═══════════ -->
@@ -946,9 +1196,136 @@
     <div id="lb-stage"></div>
   </div>
 
+  <!-- ═══════════ STUDIO CMS & ADMIN CONSOLE MODALS ═══════════ -->
+  <div id="admin-login-modal" role="dialog" aria-modal="true" aria-label="Studio Console Login">
+    <div class="admin-card login-box">
+      <div class="login-header">
+        <span class="tc">Security Clearance // <b>TC 00:00:00:00</b></span>
+        <h3>Studio <em>Console</em></h3>
+        <p style="font-size: 0.8rem; color: var(--bone-dim); margin-top: 0.4rem;">Enter administrative master passcode to unlock site editor.</p>
+      </div>
+      <input type="password" id="admin-passcode-input" class="admin-input" placeholder="PASSCODE" autocomplete="current-password" onkeydown="if(event.key==='Enter') verifyAdminLogin()">
+      <div id="login-error-msg" class="login-error">Incorrect passcode. Access denied.</div>
+      <div style="display: flex; gap: 0.8rem; margin-top: 0.5rem;">
+        <button class="admin-btn admin-btn-primary" style="flex: 1;" onclick="verifyAdminLogin()">Authenticate</button>
+        <button class="admin-btn admin-btn-secondary" onclick="closeAdminPortal()">Cancel</button>
+      </div>
+      <span class="tc" style="text-align: center; margin-top: 0.5rem; opacity: 0.5;">Default: yorii2026 (changeable in console)</span>
+    </div>
+  </div>
+
+  <div id="admin-console-modal" role="dialog" aria-modal="true" aria-label="Studio Console Dashboard">
+    <div class="admin-card console-shell">
+      <!-- Sidebar -->
+      <aside class="console-sidebar">
+        <div class="console-logo">
+          <span>YoRii<i>.</i></span>
+          <span class="tag">DEEP_CMS</span>
+        </div>
+        <nav class="console-nav">
+          <button class="console-tab-btn active" data-tab="films" onclick="switchConsoleTab('films')">🎬 Selected Films</button>
+          <button class="console-tab-btn" data-tab="reels" onclick="switchConsoleTab('reels')">📱 Vertical Reels</button>
+          <button class="console-tab-btn" data-tab="stills" onclick="switchConsoleTab('stills')">📸 Curated Stills</button>
+          <button class="console-tab-btn" data-tab="profile" onclick="switchConsoleTab('profile')">⚙️ Profile & Lede</button>
+          <button class="console-tab-btn" data-tab="system" onclick="switchConsoleTab('system')">💾 System & Backup</button>
+        </nav>
+        <div class="console-sidebar-foot">
+          <button class="admin-btn admin-btn-primary" onclick="saveCMSStateAndRender()">✓ Save & Apply</button>
+          <button class="admin-btn admin-btn-secondary" onclick="exportUpdatedHTML()">⤓ Export HTML</button>
+          <button class="admin-btn admin-btn-danger admin-btn-sm" onclick="logoutAdminPortal()">Exit Console</button>
+        </div>
+      </aside>
+
+      <!-- Main Panel -->
+      <main class="console-main">
+        <header class="console-topbar">
+          <div>
+            <h2 id="console-pane-title">Selected <em>Films</em></h2>
+            <span class="tc" id="console-pane-subtitle">Manage 16:9 featured cinematic projects and YouTube embeds</span>
+          </div>
+          <div id="console-action-slot">
+            <button class="admin-btn admin-btn-primary admin-btn-sm" id="tab-add-btn" onclick="addNewItemToActiveTab()">+ Add Project</button>
+          </div>
+        </header>
+
+        <div class="console-body">
+          <!-- PANE: FILMS -->
+          <div class="console-pane active" id="pane-films">
+            <div id="cms-films-list" style="display: flex; flex-direction: column; gap: 1rem;"></div>
+          </div>
+
+          <!-- PANE: REELS -->
+          <div class="console-pane" id="pane-reels">
+            <div id="cms-reels-list" style="display: flex; flex-direction: column; gap: 1rem;"></div>
+          </div>
+
+          <!-- PANE: STILLS -->
+          <div class="console-pane" id="pane-stills">
+            <div id="cms-stills-list" style="display: flex; flex-direction: column; gap: 1rem;"></div>
+          </div>
+
+          <!-- PANE: PROFILE & META -->
+          <div class="console-pane" id="pane-profile">
+            <div class="cms-item-card" style="grid-template-columns: 1fr;">
+              <div class="cms-item-fields">
+                <div class="cms-field">
+                  <label>Hero Role Statement</label>
+                  <input type="text" id="meta-role" class="admin-input" value="Art Director · Video Editor · Filmmaker">
+                </div>
+                <div class="cms-field">
+                  <label>Hero Lede Paragraph (Story statement)</label>
+                  <textarea id="meta-lede" class="admin-input" rows="4"></textarea>
+                </div>
+                <div class="cms-row">
+                  <div class="cms-field">
+                    <label>Contact Email (FormSubmit & Mailto)</label>
+                    <input type="email" id="meta-email" class="admin-input">
+                  </div>
+                  <div class="cms-field">
+                    <label>Hero Location Coordinate</label>
+                    <input type="text" id="meta-location" class="admin-input" value="Casablanca, Morocco — 33.57°N, 7.58°W">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PANE: SYSTEM -->
+          <div class="console-pane" id="pane-system">
+            <div class="cms-item-card" style="grid-template-columns: 1fr;">
+              <h3 style="font-family: var(--serif); font-size: 1.4rem;">Passcode Security</h3>
+              <p style="font-size: 0.8rem; color: var(--bone-dim);">Change master passcode used to unlock this studio console.</p>
+              <div class="cms-row" style="margin-top: 0.6rem;">
+                <div class="cms-field">
+                  <label>New Passcode</label>
+                  <input type="password" id="new-admin-passcode" class="admin-input" placeholder="Enter new passcode">
+                </div>
+                <div style="display: flex; align-items: flex-end;">
+                  <button class="admin-btn admin-btn-secondary" onclick="updateAdminPasscode()">Update Passcode</button>
+                </div>
+              </div>
+              <div id="passcode-update-status" class="tc" style="color: var(--accent); margin-top: 0.4rem;"></div>
+            </div>
+
+            <div class="cms-item-card" style="grid-template-columns: 1fr;">
+              <h3 style="font-family: var(--serif); font-size: 1.4rem;">Data Backup & Production Export</h3>
+              <p style="font-size: 0.8rem; color: var(--bone-dim);">Export or restore your full portfolio data to JSON, or download a production-ready HTML bundle.</p>
+              <div style="display: flex; gap: 0.8rem; margin-top: 1rem; flex-wrap: wrap;">
+                <button class="admin-btn admin-btn-secondary" onclick="exportDataJSON()">⤓ Backup JSON</button>
+                <button class="admin-btn admin-btn-secondary" onclick="document.getElementById('import-json-input').click()">⤒ Restore JSON</button>
+                <input type="file" id="import-json-input" accept=".json" style="display:none" onchange="importDataJSON(event)">
+                <button class="admin-btn admin-btn-primary" onclick="exportUpdatedHTML()">⤓ Export Production HTML</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
   <script>
-    /* ═══════════ DATA ═══════════ */
-    const FILMS = [
+    /* ═══════════ DATA & STORAGE ═══════════ */
+    const DEFAULT_FILMS = [
       { title: 'Averda — <em>People Behind the Mission</em>', vid: 'iKu5L70Nlsw', client: 'averda.com', clientUrl: 'https://www.averda.com',
         desc: 'Averda keeps cities clean across Africa and the Middle East — an operation that never sleeps. This event film turns the spotlight on the people behind it: a night of pride, applause and belonging for the Morocco teams.' },
       { title: 'Sanlam — <em>One Team, One Night</em>', vid: 'nGNu7ULfRlQ', client: 'sanlam.ma', clientUrl: 'https://sanlam.ma',
@@ -963,7 +1340,7 @@
         desc: 'Born in Dieppe in 1955, Alpine builds France\'s purest driver\'s car. For its Moroccan showcase, the A110 in signature Alpine Blue meets hot tarmac — clean lines, track cones and the unmistakable soundtrack of a mid-engine berlinette.' }
     ];
 
-    const REELS = [
+    const DEFAULT_REELS = [
       { title: 'AI Dream House', sub: 'Generative architecture', vid: 'lpNly-OW_ho' },
       { title: 'Théâtre du Liban', sub: 'Dramatic shorts', vid: 'ffPi1K8eQj0' },
       { title: 'Kartell', sub: 'Product aesthetics', vid: '4-nvbzWzjcs' },
@@ -975,7 +1352,7 @@
       { title: 'Cupra Formentor', sub: 'City focus', vid: 'IJpeGhD6bsE' }
     ];
 
-    const STILLS = [
+    const DEFAULT_STILLS = [
       { title: 'Culinary Gastronomy', img: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop' },
       { title: 'Luxury Living Architecture', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop' },
       { title: 'Avant-Garde Hypercar', img: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=800&auto=format&fit=crop' },
@@ -984,46 +1361,89 @@
       { title: 'Cinematic Mountain Pass', img: 'https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?q=80&w=800&auto=format&fit=crop' }
     ];
 
-    const EMAIL = 'youss.boukharii@gmail.com';
+    const DEFAULT_EMAIL = 'youss.boukharii@gmail.com';
 
-    /* ═══════════ BUILD ═══════════ */
+    // Load from storage or default
+    function loadSavedSiteData() {
+      try {
+        const raw = localStorage.getItem('yorii_site_data');
+        if (raw) return JSON.parse(raw);
+      } catch (e) { console.warn('Could not read site data from storage:', e); }
+      return {
+        films: DEFAULT_FILMS,
+        reels: DEFAULT_REELS,
+        stills: DEFAULT_STILLS,
+        email: DEFAULT_EMAIL,
+        role: 'Art Director · Video Editor · Filmmaker',
+        lede: "I don't just film cars, campaigns or ceremonies — I film the feeling they leave behind. Every project is a hunt for the one frame nobody else saw: light bending over a fender at dusk, the breath before the applause, the cut that lands like a heartbeat. That's the work. That's the craft."
+      };
+    }
+
+    let siteData = loadSavedSiteData();
+    let FILMS = siteData.films;
+    let REELS = siteData.reels;
+    let STILLS = siteData.stills;
+    let EMAIL = siteData.email || DEFAULT_EMAIL;
+
+    /* ═══════════ BUILD & RENDER ═══════════ */
     const pad = n => String(n).padStart(2, '0');
 
-    document.getElementById('film-list').innerHTML = FILMS.map((f, i) => `
-      <article class="film rv" data-vid="${f.vid}" tabindex="0" role="button" aria-label="Play film: ${f.title.replace(/<[^>]+>/g, '')}">
-        <div class="film-thumb">
-          <img src="https://img.youtube.com/vi/${f.vid}/maxresdefault.jpg" alt="" loading="${i < 2 ? 'eager' : 'lazy'}">
-          <span class="badge"><svg viewBox="0 0 10 10"><path d="M1 0l8 5-8 5z"/></svg> Play film</span>
-        </div>
-        <div class="film-info">
-          <span class="tc">Film ${pad(i + 1)} — <b>16:9</b></span>
-          <h3>${f.title}</h3>
-          <p>${f.desc}</p>
-          <a class="film-client" href="${f.clientUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">↗ ${f.client}</a>
-        </div>
-      </article>`).join('');
+    function renderAllMedia() {
+      // 1. Films
+      const filmListEl = document.getElementById('film-list');
+      if (filmListEl) {
+        filmListEl.innerHTML = FILMS.map((f, i) => `
+          <article class="film rv in" data-vid="${f.vid}" tabindex="0" role="button" aria-label="Play film: ${(f.title||'').replace(/<[^>]+>/g, '')}">
+            <div class="film-thumb">
+              <img src="https://img.youtube.com/vi/${f.vid}/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/${f.vid}/hqdefault.jpg'" alt="" loading="${i < 2 ? 'eager' : 'lazy'}">
+              <span class="badge"><svg viewBox="0 0 10 10"><path d="M1 0l8 5-8 5z"/></svg> Play film</span>
+            </div>
+            <div class="film-info">
+              <span class="tc">Film ${pad(i + 1)} — <b>16:9</b></span>
+              <h3>${f.title}</h3>
+              <p>${f.desc}</p>
+              ${f.client ? `<a class="film-client" href="${f.clientUrl || '#'}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">↗ ${f.client}</a>` : ''}
+            </div>
+          </article>`).join('');
+      }
 
-    document.getElementById('reel-rail').innerHTML = REELS.map((r, i) => `
-      <div class="reel" data-vid="${r.vid}" data-vertical="1" tabindex="0" role="button" aria-label="Play reel: ${r.title}">
-        <img src="https://img.youtube.com/vi/${r.vid}/hqdefault.jpg" alt="" loading="lazy">
-        <span class="reel-play"><svg viewBox="0 0 10 10"><path d="M1 0l8 5-8 5z"/></svg></span>
-        <div class="reel-meta">
-          <span class="tc">Reel ${pad(i + 1)} — ${r.sub}</span>
-          <h3>${r.title}</h3>
-        </div>
-      </div>`).join('');
+      // 2. Reels
+      const reelRailEl = document.getElementById('reel-rail');
+      if (reelRailEl) {
+        reelRailEl.innerHTML = REELS.map((r, i) => `
+          <div class="reel in" data-vid="${r.vid}" data-vertical="1" tabindex="0" role="button" aria-label="Play reel: ${r.title}">
+            <img src="https://img.youtube.com/vi/${r.vid}/hqdefault.jpg" alt="" loading="lazy">
+            <span class="reel-play"><svg viewBox="0 0 10 10"><path d="M1 0l8 5-8 5z"/></svg></span>
+            <div class="reel-meta">
+              <span class="tc">Reel ${pad(i + 1)} — ${r.sub || 'Vertical'}</span>
+              <h3>${r.title}</h3>
+            </div>
+          </div>`).join('');
+      }
 
-    document.getElementById('stills-grid').innerHTML = STILLS.map((s, i) => `
-      <figure class="still rv" data-img="${s.img}" tabindex="0" role="button" aria-label="View still: ${s.title}">
-        <img src="${s.img}" alt="${s.title}" loading="lazy">
-        <figcaption>${pad(i + 1)} — ${s.title}</figcaption>
-      </figure>`).join('');
+      // 3. Stills
+      const stillsGridEl = document.getElementById('stills-grid');
+      if (stillsGridEl) {
+        stillsGridEl.innerHTML = STILLS.map((s, i) => `
+          <figure class="still rv in" data-img="${s.img}" tabindex="0" role="button" aria-label="View still: ${s.title}">
+            <img src="${s.img}" alt="${s.title}" loading="lazy">
+            <figcaption>${pad(i + 1)} — ${s.title}</figcaption>
+          </figure>`).join('');
+      }
+
+      // Re-observe scroll elements
+      if (window.io) {
+        document.querySelectorAll('.rv').forEach(el => window.io.observe(el));
+      }
+    }
+
+    renderAllMedia();
 
     /* ═══════════ REVEAL ON SCROLL ═══════════ */
-    const io = new IntersectionObserver(entries => {
+    window.io = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
     }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
-    document.querySelectorAll('.rv').forEach(el => io.observe(el));
+    document.querySelectorAll('.rv').forEach(el => window.io.observe(el));
 
     /* ═══════════ LIGHTBOX ═══════════ */
     const lightbox = document.getElementById('lightbox');
@@ -1048,19 +1468,406 @@
 
     document.addEventListener('click', e => {
       const media = e.target.closest('[data-vid], [data-img]');
-      if (media) {
+      if (media && !e.target.closest('#admin-console-modal')) {
         if (media.dataset.vid) openLB(ytEmbed(media.dataset.vid), media.dataset.vertical);
         else openLB(`<img src="${media.dataset.img}" alt="">`);
       }
     });
     document.addEventListener('keydown', e => {
       const media = e.target.closest?.('[data-vid], [data-img]');
-      if ((e.key === 'Enter' || e.key === ' ') && media) {
+      if ((e.key === 'Enter' || e.key === ' ') && media && !e.target.closest('#admin-console-modal')) {
         e.preventDefault();
         media.click();
       }
-      if (e.key === 'Escape' && lightbox.classList.contains('on')) closeLB();
+      if (e.key === 'Escape') {
+        if (lightbox.classList.contains('on')) closeLB();
+        else if (document.getElementById('admin-console-modal').classList.contains('open')) closeAdminPortal();
+        else if (document.getElementById('admin-login-modal').classList.contains('open')) closeAdminPortal();
+      }
     });
+    document.getElementById('lb-close').addEventListener('click', closeLB);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLB(); });
+
+    /* ═══════════ STUDIO CMS & ADMIN CONTROLLER ═══════════ */
+    const DEFAULT_PASS_HASH = 'bd6d46cb0af396ea94cc70e3e3c8e0c063d484c279c362fd627b941fae9fec5c'; // sha256 of 'yorii2026'
+
+    async function sha256String(str) {
+      const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+      return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    function openAdminPortal() {
+      const isAuth = sessionStorage.getItem('yorii_cms_auth') === 'true';
+      if (isAuth) {
+        showConsoleDashboard();
+      } else {
+        const loginModal = document.getElementById('admin-login-modal');
+        loginModal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => document.getElementById('admin-passcode-input').focus(), 100);
+      }
+    }
+
+    function closeAdminPortal() {
+      document.getElementById('admin-login-modal').classList.remove('open');
+      document.getElementById('admin-console-modal').classList.remove('open');
+      document.body.style.overflow = '';
+      if (window.location.hash === '#admin' || window.location.hash === '#console') {
+        history.replaceState(null, null, ' ');
+      }
+    }
+
+    async function verifyAdminLogin() {
+      const input = document.getElementById('admin-passcode-input').value;
+      const hash = await sha256String(input);
+      const targetHash = localStorage.getItem('yorii_cms_passcode_hash') || DEFAULT_PASS_HASH;
+      const errEl = document.getElementById('login-error-msg');
+
+      if (hash === targetHash) {
+        sessionStorage.setItem('yorii_cms_auth', 'true');
+        errEl.style.display = 'none';
+        document.getElementById('admin-passcode-input').value = '';
+        document.getElementById('admin-login-modal').classList.remove('open');
+        showConsoleDashboard();
+      } else {
+        errEl.style.display = 'block';
+        document.getElementById('admin-passcode-input').select();
+      }
+    }
+
+    function logoutAdminPortal() {
+      sessionStorage.removeItem('yorii_cms_auth');
+      closeAdminPortal();
+    }
+
+    let activeConsoleTab = 'films';
+
+    function showConsoleDashboard() {
+      populateCMSInputs();
+      document.getElementById('admin-console-modal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function switchConsoleTab(tab) {
+      activeConsoleTab = tab;
+      document.querySelectorAll('.console-tab-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.tab === tab);
+      });
+      document.querySelectorAll('.console-pane').forEach(p => p.classList.remove('active'));
+      const activePane = document.getElementById(`pane-${tab}`);
+      if (activePane) activePane.classList.add('active');
+
+      const titleEl = document.getElementById('console-pane-title');
+      const subEl = document.getElementById('console-pane-subtitle');
+      const addBtn = document.getElementById('tab-add-btn');
+
+      if (tab === 'films') {
+        titleEl.innerHTML = 'Selected <em>Films</em>';
+        subEl.textContent = 'Manage 16:9 featured cinematic projects and YouTube embeds';
+        addBtn.style.display = 'inline-flex';
+        addBtn.textContent = '+ Add Film';
+      } else if (tab === 'reels') {
+        titleEl.innerHTML = 'Vertical <em>Reels</em>';
+        subEl.textContent = 'Manage 9:16 mobile short-form video embeds';
+        addBtn.style.display = 'inline-flex';
+        addBtn.textContent = '+ Add Reel';
+      } else if (tab === 'stills') {
+        titleEl.innerHTML = 'Curated <em>Stills</em>';
+        subEl.textContent = 'Manage curated photography gallery items and image URLs';
+        addBtn.style.display = 'inline-flex';
+        addBtn.textContent = '+ Add Still';
+      } else if (tab === 'profile') {
+        titleEl.innerHTML = 'Profile & <em>Lede</em>';
+        subEl.textContent = 'Edit director statements, credentials, and contact mail';
+        addBtn.style.display = 'none';
+      } else if (tab === 'system') {
+        titleEl.innerHTML = 'System & <em>Backup</em>';
+        subEl.textContent = 'Manage access passcode and export production-ready HTML';
+        addBtn.style.display = 'none';
+      }
+    }
+
+    function populateCMSInputs() {
+      // 1. Films Editor
+      const filmsContainer = document.getElementById('cms-films-list');
+      filmsContainer.innerHTML = FILMS.map((f, i) => `
+        <div class="cms-item-card" data-idx="${i}">
+          <div class="cms-item-thumb">
+            <img src="https://img.youtube.com/vi/${f.vid}/hqdefault.jpg" alt="">
+          </div>
+          <div class="cms-item-fields">
+            <div class="cms-row">
+              <div class="cms-field">
+                <label>Project Title (HTML allowed)</label>
+                <input type="text" class="admin-input film-f-title" value="${escapeHtml(f.title)}">
+              </div>
+              <div class="cms-field">
+                <label>YouTube Video ID</label>
+                <input type="text" class="admin-input film-f-vid" value="${escapeHtml(f.vid)}" onchange="this.closest('.cms-item-card').querySelector('img').src='https://img.youtube.com/vi/'+this.value+'/hqdefault.jpg'">
+              </div>
+            </div>
+            <div class="cms-row">
+              <div class="cms-field">
+                <label>Client Label</label>
+                <input type="text" class="admin-input film-f-client" value="${escapeHtml(f.client || '')}">
+              </div>
+              <div class="cms-field">
+                <label>Client URL</label>
+                <input type="text" class="admin-input film-f-clientUrl" value="${escapeHtml(f.clientUrl || '')}">
+              </div>
+            </div>
+            <div class="cms-field">
+              <label>Description Blurb</label>
+              <textarea class="admin-input film-f-desc" rows="2">${escapeHtml(f.desc || '')}</textarea>
+            </div>
+          </div>
+          <div class="cms-item-actions">
+            <button class="admin-btn admin-btn-secondary admin-btn-sm" onclick="moveCMSItem('films', ${i}, -1)" ${i===0?'disabled':''}>↑</button>
+            <button class="admin-btn admin-btn-secondary admin-btn-sm" onclick="moveCMSItem('films', ${i}, 1)" ${i===FILMS.length-1?'disabled':''}>↓</button>
+            <button class="admin-btn admin-btn-danger admin-btn-sm" onclick="deleteCMSItem('films', ${i})">✕</button>
+          </div>
+        </div>`).join('');
+
+      // 2. Reels Editor
+      const reelsContainer = document.getElementById('cms-reels-list');
+      reelsContainer.innerHTML = REELS.map((r, i) => `
+        <div class="cms-item-card" data-idx="${i}">
+          <div class="cms-item-thumb vertical">
+            <img src="https://img.youtube.com/vi/${r.vid}/hqdefault.jpg" alt="">
+          </div>
+          <div class="cms-item-fields">
+            <div class="cms-row">
+              <div class="cms-field">
+                <label>Reel Title</label>
+                <input type="text" class="admin-input reel-f-title" value="${escapeHtml(r.title)}">
+              </div>
+              <div class="cms-field">
+                <label>Sub / Genre Category</label>
+                <input type="text" class="admin-input reel-f-sub" value="${escapeHtml(r.sub || '')}">
+              </div>
+              <div class="cms-field">
+                <label>YouTube Video ID</label>
+                <input type="text" class="admin-input reel-f-vid" value="${escapeHtml(r.vid)}" onchange="this.closest('.cms-item-card').querySelector('img').src='https://img.youtube.com/vi/'+this.value+'/hqdefault.jpg'">
+              </div>
+            </div>
+          </div>
+          <div class="cms-item-actions">
+            <button class="admin-btn admin-btn-secondary admin-btn-sm" onclick="moveCMSItem('reels', ${i}, -1)" ${i===0?'disabled':''}>↑</button>
+            <button class="admin-btn admin-btn-secondary admin-btn-sm" onclick="moveCMSItem('reels', ${i}, 1)" ${i===REELS.length-1?'disabled':''}>↓</button>
+            <button class="admin-btn admin-btn-danger admin-btn-sm" onclick="deleteCMSItem('reels', ${i})">✕</button>
+          </div>
+        </div>`).join('');
+
+      // 3. Stills Editor
+      const stillsContainer = document.getElementById('cms-stills-list');
+      stillsContainer.innerHTML = STILLS.map((s, i) => `
+        <div class="cms-item-card" data-idx="${i}">
+          <div class="cms-item-thumb">
+            <img src="${escapeHtml(s.img)}" alt="">
+          </div>
+          <div class="cms-item-fields">
+            <div class="cms-row">
+              <div class="cms-field">
+                <label>Still Title</label>
+                <input type="text" class="admin-input still-f-title" value="${escapeHtml(s.title)}">
+              </div>
+              <div class="cms-field">
+                <label>Image URL</label>
+                <input type="text" class="admin-input still-f-img" value="${escapeHtml(s.img)}" onchange="this.closest('.cms-item-card').querySelector('img').src=this.value">
+              </div>
+            </div>
+          </div>
+          <div class="cms-item-actions">
+            <button class="admin-btn admin-btn-secondary admin-btn-sm" onclick="moveCMSItem('stills', ${i}, -1)" ${i===0?'disabled':''}>↑</button>
+            <button class="admin-btn admin-btn-secondary admin-btn-sm" onclick="moveCMSItem('stills', ${i}, 1)" ${i===STILLS.length-1?'disabled':''}>↓</button>
+            <button class="admin-btn admin-btn-danger admin-btn-sm" onclick="deleteCMSItem('stills', ${i})">✕</button>
+          </div>
+        </div>`).join('');
+
+      // 4. Profile & Meta
+      document.getElementById('meta-email').value = EMAIL;
+      if (siteData.lede) document.getElementById('meta-lede').value = siteData.lede;
+    }
+
+    function escapeHtml(str) {
+      return (str || '').replace(/"/g, '&quot;');
+    }
+
+    function addNewItemToActiveTab() {
+      readCurrentFormValues();
+      if (activeConsoleTab === 'films') {
+        FILMS.unshift({ title: 'New Film Title', vid: 'iKu5L70Nlsw', client: 'client.com', clientUrl: 'https://client.com', desc: 'Project synopsis and overview.' });
+      } else if (activeConsoleTab === 'reels') {
+        REELS.unshift({ title: 'New Vertical Reel', sub: 'Commercial reel', vid: 'lpNly-OW_ho' });
+      } else if (activeConsoleTab === 'stills') {
+        STILLS.unshift({ title: 'New Photography Still', img: 'hero.jpg' });
+      }
+      populateCMSInputs();
+    }
+
+    function moveCMSItem(type, index, direction) {
+      readCurrentFormValues();
+      const arr = type === 'films' ? FILMS : (type === 'reels' ? REELS : STILLS);
+      const target = index + direction;
+      if (target >= 0 && target < arr.length) {
+        const item = arr.splice(index, 1)[0];
+        arr.splice(target, 0, item);
+        populateCMSInputs();
+      }
+    }
+
+    function deleteCMSItem(type, index) {
+      if (!confirm('Remove this item from the showcase?')) return;
+      readCurrentFormValues();
+      const arr = type === 'films' ? FILMS : (type === 'reels' ? REELS : STILLS);
+      arr.splice(index, 1);
+      populateCMSInputs();
+    }
+
+    function readCurrentFormValues() {
+      // Read films
+      const filmCards = document.querySelectorAll('#cms-films-list .cms-item-card');
+      if (filmCards.length) {
+        FILMS = Array.from(filmCards).map(card => ({
+          title: card.querySelector('.film-f-title').value.trim(),
+          vid: card.querySelector('.film-f-vid').value.trim(),
+          client: card.querySelector('.film-f-client').value.trim(),
+          clientUrl: card.querySelector('.film-f-clientUrl').value.trim(),
+          desc: card.querySelector('.film-f-desc').value.trim()
+        }));
+      }
+
+      // Read reels
+      const reelCards = document.querySelectorAll('#cms-reels-list .cms-item-card');
+      if (reelCards.length) {
+        REELS = Array.from(reelCards).map(card => ({
+          title: card.querySelector('.reel-f-title').value.trim(),
+          sub: card.querySelector('.reel-f-sub').value.trim(),
+          vid: card.querySelector('.reel-f-vid').value.trim()
+        }));
+      }
+
+      // Read stills
+      const stillCards = document.querySelectorAll('#cms-stills-list .cms-item-card');
+      if (stillCards.length) {
+        STILLS = Array.from(stillCards).map(card => ({
+          title: card.querySelector('.still-f-title').value.trim(),
+          img: card.querySelector('.still-f-img').value.trim()
+        }));
+      }
+
+      // Read Profile
+      EMAIL = document.getElementById('meta-email')?.value?.trim() || EMAIL;
+      siteData.lede = document.getElementById('meta-lede')?.value?.trim() || siteData.lede;
+    }
+
+    function saveCMSStateAndRender() {
+      readCurrentFormValues();
+      siteData.films = FILMS;
+      siteData.reels = REELS;
+      siteData.stills = STILLS;
+      siteData.email = EMAIL;
+
+      localStorage.setItem('yorii_site_data', JSON.stringify(siteData));
+
+      // Update hero lede if modified
+      const heroLedeEl = document.getElementById('hero-lede');
+      if (heroLedeEl && siteData.lede) {
+        heroLedeEl.innerHTML = siteData.lede;
+        if (typeof fitHeroLede === 'function') fitHeroLede();
+      }
+
+      renderAllMedia();
+
+      // Show brief notification
+      const applyBtn = document.querySelector('.console-sidebar-foot .admin-btn-primary');
+      const orig = applyBtn.textContent;
+      applyBtn.textContent = '✓ Saved & Applied!';
+      setTimeout(() => { applyBtn.textContent = orig; }, 1800);
+    }
+
+    async function updateAdminPasscode() {
+      const pass = document.getElementById('new-admin-passcode').value;
+      const statusEl = document.getElementById('passcode-update-status');
+      if (!pass || pass.length < 4) {
+        statusEl.textContent = 'Passcode must be at least 4 characters long.';
+        return;
+      }
+      const hash = await sha256String(pass);
+      localStorage.setItem('yorii_cms_passcode_hash', hash);
+      document.getElementById('new-admin-passcode').value = '';
+      statusEl.textContent = '✓ Master passcode updated successfully.';
+      setTimeout(() => { statusEl.textContent = ''; }, 3000);
+    }
+
+    function exportDataJSON() {
+      readCurrentFormValues();
+      const payload = {
+        films: FILMS,
+        reels: REELS,
+        stills: STILLS,
+        email: EMAIL,
+        exportedAt: new Date().toISOString()
+      };
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `yorii-media-backup-${new Date().toISOString().slice(0, 10)}.json`;
+      a.click();
+    }
+
+    function importDataJSON(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = e => {
+        try {
+          const data = JSON.parse(e.target.result);
+          if (data.films) FILMS = data.films;
+          if (data.reels) REELS = data.reels;
+          if (data.stills) STILLS = data.stills;
+          if (data.email) EMAIL = data.email;
+          saveCMSStateAndRender();
+          populateCMSInputs();
+          alert('✓ Data restored successfully!');
+        } catch (err) { alert('Invalid backup JSON file.'); }
+      };
+      reader.readAsText(file);
+    }
+
+    function exportUpdatedHTML() {
+      saveCMSStateAndRender();
+      // Replace DEFAULT_FILMS, DEFAULT_REELS, DEFAULT_STILLS in current source
+      let currentHTML = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+
+      // Clean up modal open states before export
+      currentHTML = currentHTML.replace(/<div id="admin-login-modal"([^>]*)class="([^"]*)open([^"]*)"/g, '<div id="admin-login-modal"$1class="$2$3"');
+      currentHTML = currentHTML.replace(/<div id="admin-console-modal"([^>]*)class="([^"]*)open([^"]*)"/g, '<div id="admin-console-modal"$1class="$2$3"');
+
+      const blob = new Blob([currentHTML], { type: 'text/html' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'index.html';
+      a.click();
+    }
+
+    // Keyboard & Hash Watchers
+    window.addEventListener('keydown', e => {
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'A' || e.key === 'a')) {
+        e.preventDefault();
+        openAdminPortal();
+      }
+    });
+
+    function checkAdminHash() {
+      const h = window.location.hash.toLowerCase();
+      if (h === '#admin' || h === '#console' || h === '#cms' || h === '#yorii-console') {
+        openAdminPortal();
+      }
+    }
+    window.addEventListener('hashchange', checkAdminHash);
+    window.addEventListener('DOMContentLoaded', checkAdminHash);
+    checkAdminHash();
     document.getElementById('lb-close').addEventListener('click', closeLB);
     lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLB(); });
 
